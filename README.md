@@ -7,6 +7,10 @@ https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.htm
 - https://www.youtube.com/c/AlextheEntreprenerd
     - https://www.youtube.com/playlist?list=PLjhq46XB5LWukdEt29lTaJl9XFG9CBMOp
 
+## Plugin
+
+https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html
+
 ## Auth
 
 - https://www.youtube.com/watch?v=TIK9CYDgs5k&list=PL2dKqfImstaROBMu304aaEfIVTGodkdHh&index=3 (v3, but still applicable to v4)
@@ -15,6 +19,31 @@ https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.htm
 - https://forum.strapi.io/t/retrieve-user-details/5082/2 (v3, but still applicable to v4)
 - https://strapi.io/blog/a-beginners-guide-to-authentication-and-authorization-in-strapi (v4, but relatable to v3)
     - https://www.youtube.com/watch?v=vcopLqUq594&t=4336s
+
+## Providers
+
+https://strapi.io/video-library/install-config-email-upload-provider (Using Email and Upload as examples)
+
+### Social SignIns
+
+- Login providers: https://strapi.io/video-library/how-login-provider-process-works
+    - Google: https://www.youtube.com/watch?v=vGtVSwpOlsM
+    - FB: https://strapi.io/blog/learning-strapi-authentication-flows-facebook-provider
+    - Github and FB: https://strapi.io/blog/social-authentication-with-strapi-and-nuxt-js-adding-social-providers
+    - Auth0: https://strapi.io/blog/auth0-provider-and-strapi-tutorial
+
+### Other providers
+
+- Email and Upload: https://www.youtube.com/watch?v=1fhFgbR0f3I
+- Cloudinary: https://www.npmjs.com/package/@strapi/provider-upload-cloudinary
+
+## Backend
+
+- https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html
+    - Querying DB: https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#queries
+    - Hooks:
+        - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#models
+        - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#webhooks
 
 ## DB
 
@@ -27,6 +56,12 @@ Using MySQL instead of SQLite: https://www.youtube.com/watch?v=PaNSN_h1_JA
 - Plugin: 
     - https://strapi.io/blog/v4-plugin-migration-guide
         - New: https://docs.strapi.io/developer-docs/latest/update-migration-guides/migration-guides/v4/plugin-migration.html
+
+## Lang
+
+- https://strapi.io/blog/i18n-implementation-best-practices-in-strapi
+- https://www.youtube.com/watch?v=bWyP1piDEcg
+- https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html#i18n
 
 ## Install and Run
 
@@ -58,4 +93,4 @@ https://discord.com/invite/strapi
     - https://github.com/iamshaunjp/Strapi-Crash-Course/tree/lesson-5
 - Instant Messenger with React.js and MongoDB: https://strapi.io/blog/how-to-build-a-real-time-chat-forum-using-strapi-socket-io-react-and-mongo-db
 - `strapi-plugin-magic`: https://www.youtube.com/watch?v=dcRupfuPa1U
-- Google SignIn (OAuth2): https://www.youtube.com/watch?v=vGtVSwpOlsM
+- Extensions (for overwritting functionality): https://www.youtube.com/watch?v=zuJPTIEYbXk
