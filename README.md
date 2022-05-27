@@ -2,7 +2,8 @@
 
 https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.html
 
-https://www.youtube.com/c/AlextheEntreprenerd
+- https://www.youtube.com/c/AlextheEntreprenerd
+    - https://www.youtube.com/playlist?list=PLjhq46XB5LWukdEt29lTaJl9XFG9CBMOp
 
 node v14.0.0
 npm v6.14.4
