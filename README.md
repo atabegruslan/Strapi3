@@ -20,23 +20,6 @@ https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-custom
 - https://strapi.io/blog/a-beginners-guide-to-authentication-and-authorization-in-strapi (v4, but relatable to v3)
     - https://www.youtube.com/watch?v=vcopLqUq594&t=4336s
 
-## Providers
-
-https://strapi.io/video-library/install-config-email-upload-provider (Using Email and Upload as examples)
-
-### Social SignIns
-
-- Login providers: https://strapi.io/video-library/how-login-provider-process-works
-    - Google: https://www.youtube.com/watch?v=vGtVSwpOlsM
-    - FB: https://strapi.io/blog/learning-strapi-authentication-flows-facebook-provider
-    - Github and FB: https://strapi.io/blog/social-authentication-with-strapi-and-nuxt-js-adding-social-providers
-    - Auth0: https://strapi.io/blog/auth0-provider-and-strapi-tutorial
-
-### Other providers
-
-- Email and Upload: https://www.youtube.com/watch?v=1fhFgbR0f3I
-- Cloudinary: https://www.npmjs.com/package/@strapi/provider-upload-cloudinary
-
 ## Backend
 
 - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html
@@ -93,4 +76,3 @@ https://discord.com/invite/strapi
     - https://github.com/iamshaunjp/Strapi-Crash-Course/tree/lesson-5
 - Instant Messenger with React.js and MongoDB: https://strapi.io/blog/how-to-build-a-real-time-chat-forum-using-strapi-socket-io-react-and-mongo-db
 - `strapi-plugin-magic`: https://www.youtube.com/watch?v=dcRupfuPa1U
-- Extensions (for overwritting functionality): https://www.youtube.com/watch?v=zuJPTIEYbXk
