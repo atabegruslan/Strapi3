@@ -23,7 +23,10 @@ https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-custom
 ## Backend
 
 - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html
-    - Querying DB: https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#queries
+    - Querying DB: 
+        - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#queries
+        - https://strapi.gitee.io/documentation/v3.x/concepts/queries.html#api-reference
+        - Eg: https://forum.strapi.io/t/how-to-query-for-administrators/4045
     - Hooks:
         - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#models
         - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html#webhooks
@@ -57,11 +60,13 @@ After you install and run for the first time, you will be prompted to make a sup
 
 `yarn strapi generate:plugin camelCase`
 
-`yarn strapi build`
+`yarn build`
 
-`yarn start`
+Run: `yarn start`
 
 Hot reload: `yarn develop`
+
+Hot reload (Backend included): `yarn develop --watch-admin`
 
 ## Ref
 
