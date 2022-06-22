@@ -16,10 +16,10 @@ https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.htm
 
 ## Auth
 
-- https://www.youtube.com/watch?v=TIK9CYDgs5k&list=PL2dKqfImstaROBMu304aaEfIVTGodkdHh&index=3 (v3, but still applicable to v4)
-- https://www.youtube.com/watch?v=EjBpJuqqi3U (v3, but still applicable to v4)
-- https://www.youtube.com/watch?v=xv5TWP3tCKs (v3, but still applicable to v4)
-- https://forum.strapi.io/t/retrieve-user-details/5082/2 (v3, but still applicable to v4)
+- https://www.youtube.com/watch?v=TIK9CYDgs5k&list=PL2dKqfImstaROBMu304aaEfIVTGodkdHh&index=3 
+- https://www.youtube.com/watch?v=EjBpJuqqi3U 
+- https://www.youtube.com/watch?v=xv5TWP3tCKs 
+- https://forum.strapi.io/t/retrieve-user-details/5082/2
 - https://strapi.io/blog/a-beginners-guide-to-authentication-and-authorization-in-strapi (v4, but relatable to v3)
     - https://www.youtube.com/watch?v=vcopLqUq594&t=4336s
 
