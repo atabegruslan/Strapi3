@@ -9,7 +9,10 @@ https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.htm
 
 ## Plugin
 
-https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html
+- https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html
+- https://strapi.io/blog/how-to-create-an-import-content-plugin-part-1-4 (read later)
+- https://www.youtube.com/watch?v=kIZHzbmnhnU
+    - https://www.youtube.com/watch?v=kIZHzbmnhnU&t=960s
 
 ## Auth
 
@@ -81,3 +84,9 @@ https://discord.com/invite/strapi
     - https://github.com/iamshaunjp/Strapi-Crash-Course/tree/lesson-5
 - Instant Messenger with React.js and MongoDB: https://strapi.io/blog/how-to-build-a-real-time-chat-forum-using-strapi-socket-io-react-and-mongo-db
 - `strapi-plugin-magic`: https://www.youtube.com/watch?v=dcRupfuPa1U
+
+## My personal projects and notes
+
+- https://github.com/atabegruslan/Strapi3/tree/master/plugins/contact-form
+- https://github.com/atabegruslan/Strapi3/tree/master/plugins/import-content
+- https://github.com/atabegruslan/Strapi3/tree/master/plugins/wysiwyg
