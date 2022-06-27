@@ -40,7 +40,7 @@ const HomePage = () => {
       }
     });
   };
-  render() {
+  render = () => {
     return (
       <div className={"container-fluid"} style={{ padding: "18px 30px" }}>
         <PluginHeader
@@ -57,7 +57,7 @@ const HomePage = () => {
               name: "Import History",
               to: getUrl("history")
             }
-          ]}
+          ]} 
           style={{ marginTop: "4.4rem" }}
         />
         <div className="row">
@@ -73,7 +73,7 @@ const HomePage = () => {
           </Block>
         </div>
       </div>
-    );
-  }
+    )
+  };
 };
 export default memo(HomePage);

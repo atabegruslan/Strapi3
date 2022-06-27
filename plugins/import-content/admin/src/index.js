@@ -33,7 +33,7 @@ export default strapi => {
           icon,
           label: {
             id: `${pluginId}.plugin.name`,
-            defaultMessage: name,
+            defaultMessage: name.replace('-', ' ').replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); }),
           },
           name,
           permissions: [

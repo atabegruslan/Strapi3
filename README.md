@@ -87,6 +87,6 @@ https://discord.com/invite/strapi
 
 ## My personal projects and notes
 
-- https://github.com/atabegruslan/Strapi3/tree/master/plugins/contact-form
-- https://github.com/atabegruslan/Strapi3/tree/master/plugins/import-content
+- https://github.com/atabegruslan/Strapi3/tree/master/plugins/contact-form (Not yet finished)
+- https://github.com/atabegruslan/Strapi3/tree/master/plugins/import-content (Not yet finished)
 - https://github.com/atabegruslan/Strapi3/tree/master/plugins/wysiwyg
