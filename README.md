@@ -10,9 +10,21 @@ https://docs-v3.strapi.io/developer-docs/latest/getting-started/introduction.htm
 ## Plugin
 
 - https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html
-- https://strapi.io/blog/how-to-create-an-import-content-plugin-part-1-4 (read later)
 - https://www.youtube.com/watch?v=kIZHzbmnhnU
     - https://www.youtube.com/watch?v=kIZHzbmnhnU&t=960s
+
+### Appearing in `/admin`
+
+If you don't want your plugin to appear in the `/admin` left-side-bar, then comment out the entire `menu` section in `{root}/plugins/{plugin name}/admin/src/index.js`.
+
+If you don't want your plugin to be accessable by URL the `/admin`, then make `mainComponent: null,` instead of `mainComponent: App,` in `{root}/plugins/{plugin name}/admin/src/index.js`.
+
+```js
+'someplugin': {
+  enabled: true,
+  resolve: './src/plugins/someplugin'
+},
+```
 
 ## Auth
 
