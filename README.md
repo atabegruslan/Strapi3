@@ -48,7 +48,201 @@ If you don't want your plugin to be accessable by URL the `/admin`, then make `m
 
 ## DB
 
+### Querying
+
+**In Strapi v4, it's like:**
+
+Example 1: Reading from `files` table:
+```js
+await strapi.entityService.findMany('plugin::upload.file', {
+  filters: {
+    $not: {
+      name: 'exclude.png',
+    },
+  },
+  populate: { category: true },
+});
+```
+
+Example 2: Reading from `admin_users` table:
+```js
+await strapi.entityService.findMany('admin::user');
+```
+
+(Entity Service API)   
+https://github.com/atabegruslan/Strapi4#db-interaction 
+
+**But in Strapi v3, it's like:**
+
+Example 1: Reading from `upload_file` table:
+```js
+await strapi.query('file', 'upload').find({name_ne: 'exclude.png'});
+```
+
+Example 2: Reading from `strapi_administrator` table:
+```js
+await strapi.query('user', 'admin').find({});
+```
+
+https://strapi.gitee.io/documentation/v3.x/concepts/queries.html
+
+### Changing DB
+
 Using MySQL instead of SQLite: https://www.youtube.com/watch?v=PaNSN_h1_JA
+
+## MVC
+
+**In Strapi v4, a plugin's MVC flows like:**
+
+`src/plugins/plugin-name/admin/src/pages/HomePage/index.js`
+
+```js
+import { useEffect, useState } from 'react';
+import { request } from "@strapi/helper-plugin";
+
+const HomePage = () => {
+  const [config, setConfig] = useState({
+    key1: '',
+    key2: ''
+  });
+
+  useEffect(() => {
+    request('/plugin-name/config', {method: 'GET'}).then(setConfig);
+  }, []);
+```
+
+`src/plugins/plugin-name/server/routes/index.js`
+
+```js
+module.exports = [
+  {
+    method: 'GET',
+    path: '/config',
+    handler: 'pluginName.getConfig',
+    config: {
+      policies: [],
+      auth: false,
+    },
+  },
+```
+
+`src/plugins/plugin-name/server/controllers/index.js`
+
+```js
+const pluginName = require('./plugin-name');
+
+module.exports = {
+  pluginName,
+};
+```
+
+`src/plugins/plugin-name/server/controllers/plugin-name.js`
+
+```js
+module.exports = {
+  async getConfig(ctx) {
+    ctx.body = await strapi
+      .plugin('plugin-name')
+      .service('pluginName')
+      .getConfig();
+  },
+```
+
+`src/plugins/plugin-name/server/services/index.js`
+
+```js
+const pluginName = require('./plugin-name');
+
+module.exports = {
+  pluginName,
+};
+```
+
+`src/plugins/plugin-name/server/services/plugin-name.js`
+
+```js
+const fs = require('fs');
+const path = require('path');
+const fetch = require("node-fetch");
+
+module.exports = ({ strapi }) => ({
+  ownFunction() {
+    return {key1:'val1', key2:'val2'};
+  },
+  async getConfig() {
+    var config = this.ownFunction();
+
+    // var queryParams = ctx.request.query;
+    // var payload = ctx.request.body;
+
+    // strapi.store... # Use Strapi store
+    // strapi.config... # Get Strapi info
+    // strapi.entityService... # Use Entity Service API
+    // strapi.dirs.public # Get public directory
+
+    return config;
+  },
+```
+
+**But in Strapi v3, a plugin's MVC flows like:**
+
+`plugins/plugin-name/admin/src/containers/HomePage/index.js`
+
+```js
+import { useEffect, useState } from 'react';
+import { request } from "strapi-helper-plugin";
+
+const HomePage = () => {
+  const [config, setConfig] = useState({
+    key1: '',
+    key2: ''
+  });
+
+  useEffect(() => {
+    request('/plugin-name/config', {method: 'GET'}).then(setConfig);
+  }, []);
+```
+
+`plugins/plugin-name/config/routes.json`
+
+```js
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/config",
+      "handler": "plugin-name.getConfig",
+      "config": {
+        "policies": []
+      }
+    },
+```
+
+`plugins/plugin-name/controllers/index.js`
+
+```js
+const fs = require('fs');
+const path = require('path');
+const fetch = require("node-fetch");
+
+module.exports = {
+  ownFunction: () => {
+    return {key1:'val1', key2:'val2'};
+  },
+  getConfig: async (ctx) => {
+    var config = module.exports.ownFunction();
+
+    // var queryParams = ctx.request.query;
+    // var payload = ctx.request.body;
+
+    // strapi.store... # Use Strapi store
+    // strapi.config... # Get Strapi info
+    // strapi.query... # Query DB
+    // path.join(strapi.dir, 'public') # Get public directory
+
+    ctx.send(config);
+  },
+```
 
 ## Update Strapi from v3 to v4
 
@@ -63,6 +257,12 @@ Using MySQL instead of SQLite: https://www.youtube.com/watch?v=PaNSN_h1_JA
 - https://strapi.io/blog/i18n-implementation-best-practices-in-strapi
 - https://www.youtube.com/watch?v=bWyP1piDEcg
 - https://docs-v3.strapi.io/developer-docs/latest/development/local-plugins-customization.html#i18n
+- https://stackoverflow.com/questions/58154297/showing-custom-plugins-pages-in-the-left-menu-in-strapi-3/58490999#58490999 (partly related)
+
+### Implementation
+
+Just like in v4 https://github.com/atabegruslan/Strapi4/tree/master/src/plugins/language-strings   
+but with 1 difference: `intl.formatMessage({id:'pluginName.some.identifier'})` instead of `intl.formatMessage({id:'plugin-name.some.identifier'})`
 
 ## Install and Run
 
