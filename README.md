@@ -26,6 +26,12 @@ If you don't want your plugin to be accessable by URL the `/admin`, then make `m
 },
 ```
 
+## Reset password
+
+https://forum.strapi.io/t/didnt-get-the-password-recovery-link/1533
+
+`yarn strapi admin:reset-user-password --email=chef@strapi.io --password=Gourmet1234`
+
 ## Auth
 
 - https://www.youtube.com/watch?v=TIK9CYDgs5k&list=PL2dKqfImstaROBMu304aaEfIVTGodkdHh&index=3 
