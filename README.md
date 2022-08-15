@@ -244,6 +244,71 @@ module.exports = {
   },
 ```
 
+## Providers
+
+V4 Providers: https://github.com/atabegruslan/Strapi4#providers
+
+Take Cloudinary upload provider for example:
+
+V4: 
+- https://github.com/strapi/strapi/tree/master/packages/providers/upload-cloudinary
+- https://www.npmjs.com/package/@strapi/provider-upload-cloudinary
+
+V3: 
+- https://github.com/strapi/strapi/tree/v3/3.6.11/packages/strapi-provider-upload-cloudinary
+- https://www.npmjs.com/package/strapi-provider-upload-cloudinary
+
+For local development setup:
+
+v4: 
+- Put the local module here: `local_modules/@strapi/provider-upload-filerobot`
+- In `package.json`, name it `@strapi/provider-upload-cloudinary`
+- Include it by running from root CMS folder: `npm i -S ./local_modules/@strapi/provider-upload-filerobot`
+
+`config/plugins.js`
+```js
+module.exports = {
+  ...
+  'upload': {
+    config: {
+      provider: 'cloudinary',
+      providerOptions: { /* ... */ },
+    },
+  },
+};
+```
+
+`config/middlewares.js`: Replace `'strapi::security'` with:
+```js
+{
+  name: 'strapi::security',
+  config: {
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'connect-src': ["'self'", 'https:'],
+        'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+        'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+        upgradeInsecureRequests: null,
+      },
+    },
+  },
+},
+```
+
+V3: 
+- Put the local module here: `local_modules/strapi-provider-upload-filerobot`
+- In `package.json`, name it `strapi-provider-upload-cloudinary`
+- Include it by running from root CMS folder: `npm i -S ./local_modules/strapi-provider-upload-filerobot`
+
+`extensions/upload/config/settings.json`
+```js
+{
+  "provider": "cloudinary",
+  "providerOptions": { /* ... */ }
+}
+```
+
 ## Update Strapi from v3 to v4
 
 - CMS: 
