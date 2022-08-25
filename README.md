@@ -41,6 +41,21 @@ https://forum.strapi.io/t/didnt-get-the-password-recovery-link/1533
 - https://strapi.io/blog/a-beginners-guide-to-authentication-and-authorization-in-strapi (v4, but relatable to v3)
     - https://www.youtube.com/watch?v=vcopLqUq594&t=4336s
 
+```
+curl --location --request POST '{domain}/auth/local' 
+--form 'identifier="user@auth.com"' 
+--form 'password="auth_user_password"'
+```
+
+Potential Problem: If you get
+```
+error /var/www/v3/node_modules/redis/dist/index.js:42
+            ...options?.modules
+                       ^
+SyntaxError: Unexpected token '.'
+```
+you need to install a lower version of Redis https://forum.strapi.io/t/problem-with-a-new-instance/18246
+
 ## Backend
 
 - https://docs-v3.strapi.io/developer-docs/latest/development/backend-customization.html
@@ -353,6 +368,35 @@ Run: `yarn start`
 Hot reload: `yarn develop`
 
 Hot reload (Backend included): `yarn develop --watch-admin`
+
+## REST API
+
+Permissions: Create an user, give it Authenticated role. Settings > Roles > Authenticated user role > Give permissions
+
+Auth: https://github.com/atabegruslan/Strapi3#auth
+
+GET all media: 
+
+```
+curl --location --request GET '{domain}/upload/files' \
+--header 'Authorization: Bearer {token}'
+```
+https://docs.strapi.io/developer-docs/latest/plugins/upload.html#endpoints
+
+GET all contents of custom content-type: 
+
+```
+curl --location --request GET '{domain}/tests' \
+--header 'Authorization: Bearer {token}'
+```
+
+## Publishing to NPMJS
+
+- Providers: The `name` in `package.json` must have this format: `strapi-provider-upload-{whatever}`
+- Plugins: The `name` in `package.json` must have this format: `strapi-plugin-{whatever}` . Use only hyphenated-case; There shouldn't be any camelCasing involved.
+  - The prefixes for your requests and language strings should also be `whatever` your plugin module is named.
+    - EG: `request('/whatever/rest/of/path', {method: 'GET'})`
+    - EG: `intl.formatMessage({id: 'whatever.rest.of.id'})`
 
 ## Ref
 
