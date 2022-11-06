@@ -369,6 +369,10 @@ Hot reload: `yarn develop`
 
 Hot reload (Backend included): `yarn develop --watch-admin`
 
+## Logging
+
+https://strapi.gitee.io/documentation/3.0.0-beta.x/concepts/logging.html#global-logger-configuration
+
 ## REST API
 
 Permissions: Create an user, give it Authenticated role. Settings > Roles > Authenticated user role > Give permissions
